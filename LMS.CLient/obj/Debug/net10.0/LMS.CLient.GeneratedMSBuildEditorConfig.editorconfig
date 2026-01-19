@@ -1,0 +1,93 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.VerifyReferenceTrimCompatibility = 
+build_property.VerifyReferenceAotCompatibility = 
+build_property.TargetFramework = net10.0
+build_property.TargetFrameworkIdentifier = .NETCoreApp
+build_property.TargetFrameworkVersion = v10.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = browser
+build_property.RootNamespace = LMS.CLient
+build_property.RootNamespace = LMS.CLient
+build_property.ProjectDir = C:\Users\304561\Desktop\LMS\LMS.CLient\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = false
+build_property.RazorLangVersion = 9.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\304561\Desktop\LMS\LMS.CLient
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 10.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/304561/Desktop/LMS/LMS.CLient/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/304561/Desktop/LMS/LMS.CLient/Pages/AddBooks.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkQm9va3MucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/304561/Desktop/LMS/LMS.CLient/Pages/AdminDashBoard.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5EYXNoQm9hcmQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/304561/Desktop/LMS/LMS.CLient/Pages/AdminLogin.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5Mb2dpbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/304561/Desktop/LMS/LMS.CLient/Pages/AdminRegister.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5SZWdpc3Rlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/304561/Desktop/LMS/LMS.CLient/Pages/AllBooks.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWxsQm9va3MucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/304561/Desktop/LMS/LMS.CLient/Pages/EditBook.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdEJvb2sucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/304561/Desktop/LMS/LMS.CLient/Pages/Home.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/304561/Desktop/LMS/LMS.CLient/Pages/IssueBook.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSXNzdWVCb29rLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/304561/Desktop/LMS/LMS.CLient/Pages/IssueHisory.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSXNzdWVIaXNvcnkucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/304561/Desktop/LMS/LMS.CLient/Pages/NotFound.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTm90Rm91bmQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/304561/Desktop/LMS/LMS.CLient/Pages/StudentLogin.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudExvZ2luLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/304561/Desktop/LMS/LMS.CLient/Pages/StudentRegister.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudFJlZ2lzdGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/304561/Desktop/LMS/LMS.CLient/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/304561/Desktop/LMS/LMS.CLient/Layout/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-247i1d2fqb
+
+[C:/Users/304561/Desktop/LMS/LMS.CLient/Layout/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-30til6k6uf

@@ -1,0 +1,73 @@
+@page "/pending-books"
+@using LMS.CLient.Services
+@using LMS.Library.DTOs
+@inject AdminClientService adminService
+
+<h3 class="mb-3">Pending Book Requests</h3>
+
+@if (pendingBooks == null || pendingBooks.Count == 0)
+{
+    <p>No pending book requests.</p>
+}
+else
+{
+    <table class="table table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th>Book Name</th>
+                <th>Author</th>
+                <th>Description</th>
+                <th>Copies</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in pendingBooks)
+            {
+                <tr>
+                    <td>@book.BookName</td>
+                    <td>@book.Author</td>
+                    <td>@book.Description</td>
+                    <td>@book.Copies</td>
+                    <td>
+                        <button class="btn btn-success btn-sm me-2"
+                                @onclick="() => Issue(book.BookId)">
+                            Issue
+                        </button>
+
+                        <button class="btn btn-danger btn-sm"
+                                @onclick="() => Reject(book.BookId)">
+                            Reject
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<BookDto> pendingBooks = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        pendingBooks = await adminService.GetPendingBooksAsync();
+    }
+
+    private async Task Issue(int bookId)
+    {
+        await adminService.IssueBookAsync(bookId);
+
+        pendingBooks.RemoveAll(b => b.BookId == bookId);
+        StateHasChanged();
+    }
+
+    private async Task Reject(int bookId)
+    {
+        await adminService.RejectBookAsync(bookId);
+
+        
+        pendingBooks.RemoveAll(b => b.BookId == bookId);
+        StateHasChanged();
+    }
+}

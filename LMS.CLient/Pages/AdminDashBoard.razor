@@ -1,0 +1,96 @@
+@page "/admin-dashboard"
+@using LMS.CLient.Services
+@using LMS.Library.DTOs
+@inject IJSRuntime JS
+@inject StudentService studentService
+@inject NavigationManager Nav
+@inject AdminClientService adminService
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h3 class="mb-0">Books</h3>
+    <button class="btn btn-success" @onclick="HandleAddBook">Add Books</button>
+     <button class="btn btn-success" @onclick="HandleIssueHistory">Issue  History</button>
+     <button class="btn btn-success" @onclick="HandleIssueBook">Issue Book</button>
+</div>
+
+@if (books == null)
+{
+    <p>Loading books...</p>
+}
+else if (!books.Any())
+{
+    <p>No books available.</p>
+}
+else
+{
+    <div class="row">
+        @foreach (var book in books)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+
+                    <img src="@book.ImageUrl"
+                         class="card-img-top"
+                         alt="@book.BookName"
+                         style="height:200px; object-fit:cover;" />
+              
+                    <div class="card-body d-flex flex-column">
+                         
+                        <h5 class="card-title">@book.BookName</h5>
+
+                        <p class="text-muted mb-1">
+                            <strong>Author:</strong> @book.Author
+                        </p>
+
+                        <p class="card-text">@book.Description</p>
+
+                        <p class="mt-auto">
+                            <strong>Copies:</strong> @book.Copies
+                        </p>
+                    </div>
+
+                    <div class="d-flex justify-content-center gap-2 mb-2">
+                       <button class="btn btn-success" @onclick="()=>HandleEdit(book.BookId)">Edit</button>
+                       <button class="btn btn-danger ml-2" @onclick="()=>HandleDelete(book.BookId)">Delete</button>
+                    </div>
+
+                </div>
+            </div>
+        }
+    </div>
+}
+@code {
+    private List<BookDto> books = new();
+    string message;
+    protected override async Task OnInitializedAsync()
+    {
+        books = await studentService.GetAllBooksAsync();
+    }
+    protected void HandleEdit(int id){
+        Nav.NavigateTo($"/edit/{id}");
+    }
+    protected async Task HandleDelete(int id)
+{
+    var response = await adminService.DeleteBookAsync(id);
+
+    var message = await response.Content.ReadAsStringAsync();
+
+    if (response.IsSuccessStatusCode)
+    {
+        await JS.InvokeVoidAsync("alert", message);
+    }
+    else
+    {
+        await JS.InvokeVoidAsync("alert", message);
+    }
+}
+
+    protected void HandleAddBook(){
+        Nav.NavigateTo("/add-book");
+    }
+    protected void HandleIssueBook(){
+        Nav.NavigateTo("/pending-books");
+    }
+    protected void HandleIssueHistory(){
+        Nav.NavigateTo("/issue-history");
+    }
+}

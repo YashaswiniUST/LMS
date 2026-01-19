@@ -1,0 +1,58 @@
+@page "/add-book"
+@using LMS.CLient.Services
+@using LMS.Library.DTOs
+@inject AdminClientService adminService
+@inject NavigationManager NavigationManager
+
+<EditForm Model="@newBook" OnValidSubmit="HandleAdd">
+    <DataAnnotationsValidator />
+
+    <div class="login-card1">
+        <h4 class="text-center mb-3">Add Book</h4>
+
+        <div class="mb-3">
+            <label>Book Name</label>
+            <InputText class="form-control"
+                       @bind-Value="newBook.BookName" />
+        </div>
+
+        <div class="mb-3">
+            <label>Image URL</label>
+            <InputText class="form-control"
+                       @bind-Value="newBook.ImageUrl" />
+        </div>
+
+        <div class="mb-3">
+            <label>Author Name</label>
+            <InputText class="form-control"
+                       @bind-Value="newBook.Author" />
+        </div>
+
+        <div class="mb-3">
+            <label>Description</label>
+            <InputText class="form-control"
+                       @bind-Value="newBook.Description" />
+        </div>
+
+        <div class="mb-3">
+            <label>No of Copies</label>
+            <InputNumber TValue="int"
+                         class="form-control"
+                         @bind-Value="newBook.Copies" />
+        </div>
+
+        <button class="btn btn-success w-100" type="submit">
+            Add Book
+        </button>
+    </div>
+</EditForm>
+
+@code {
+    private BookDto newBook = new();
+
+    private async Task HandleAdd()
+    {
+        await adminService.AddBookAsync(newBook);
+        NavigationManager.NavigateTo("/admin-dashboard");
+    }
+}

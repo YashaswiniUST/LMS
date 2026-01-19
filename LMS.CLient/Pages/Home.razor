@@ -1,0 +1,22 @@
+﻿@page "/"
+@inject NavigationManager Nav
+<div class="login-container">
+    <div class="login-card">
+        <h4 class="text-center mb-4">Login As</h4>
+        <button class="btn btn-primary w-100 mb-3" @onclick="HandleAdminLogin">
+            Admin Login
+        </button>
+
+        <button class="btn btn-outline-primary w-100" @onclick="HandleStudentLogin">
+            Student Login
+        </button>
+    </div>
+</div>
+@code{
+  private void HandleAdminLogin(){
+    Nav.NavigateTo("/admin-login");
+  }
+  private void HandleStudentLogin(){
+    Nav.NavigateTo("/student-login");
+  }
+}

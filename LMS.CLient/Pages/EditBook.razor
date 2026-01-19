@@ -1,0 +1,75 @@
+@page "/edit/{id:int}"
+@using LMS.CLient.Services
+@using LMS.Library.DTOs
+@inject NavigationManager NavigationManager
+@inject AdminClientService adminService
+
+<EditForm Model="@editBook" OnValidSubmit="HandleEdit">
+    <DataAnnotationsValidator />
+
+    <div class="login-card1">
+        <h4 class="text-center mb-3">Edit Book</h4>
+
+        <!-- Book ID (Read-only) -->
+        <div class="mb-3">
+            <label>Book ID</label>
+            <InputNumber TValue="int"
+                         class="form-control"
+                         @bind-Value="editBook.BookId"
+                         disabled />
+        </div>
+
+        <div class="mb-3">
+            <label>Book Name</label>
+            <InputText class="form-control"
+                       @bind-Value="editBook.BookName" />
+        </div>
+
+        <div class="mb-3">
+            <label>Image URL</label>
+            <InputText class="form-control"
+                       @bind-Value="editBook.ImageUrl" />
+        </div>
+
+        <div class="mb-3">
+            <label>Author Name</label>
+            <InputText class="form-control"
+                       @bind-Value="editBook.Author" />
+        </div>
+
+        <div class="mb-3">
+            <label>Description</label>
+            <InputText class="form-control"
+                       @bind-Value="editBook.Description" />
+        </div>
+
+        <div class="mb-3">
+            <label>No of Copies</label>
+            <InputNumber TValue="int"
+                         class="form-control"
+                         @bind-Value="editBook.Copies" />
+        </div>
+
+        <button class="btn btn-primary w-100" type="submit">
+            Update Book
+        </button>
+    </div>
+</EditForm>
+
+@code {
+    [Parameter]
+    public int id { get; set; }
+
+    private BookDto editBook = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        editBook = await adminService.GetBookById(id);
+    }
+
+    private async Task HandleEdit()
+    {
+        await adminService.EditBookAsync(editBook,editBook.BookId);
+        NavigationManager.NavigateTo("/admin-dashboard");
+    }
+}

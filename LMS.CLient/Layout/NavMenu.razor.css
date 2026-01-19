@@ -1,0 +1,13 @@
+.nav-bar{
+    background-color: #1E3A8A;
+    color:#fff;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+   
+    
+}
+.nav-bar h5{
+   margin-left: 35px;
+}

@@ -1,0 +1,35 @@
+@page "/student-register"
+@using LMS.CLient.Services
+@using LMS.Library.DTOs
+@inject StudentAuthService studentAuthService
+@inject NavigationManager Nav
+<EditForm Model="@register" OnValidSubmit="HandleRegister">
+    <DataAnnotationsValidator/>
+    <div class="login-card1">
+        <h4 class="text-center mb-3">Register</h4>
+        <div class="mb-3">
+             <label>Name</label>
+             <InputText class="form-control" @bind-Value="register.Name"/>
+        </div>
+        <div class="mb-3">
+             <label>Email</label>
+             <InputText class="form-control" @bind-Value="register.Email"/>
+        </div>
+        <div class="mb-3">
+            <label>Password</label>
+            <InputText type="password" class="form-control" @bind-Value="register.Password"/>
+        </div>
+        <button class="btn btn-primary w-100" type="submit">Register</button>
+        <p class="text-danger mt-2">@message</p>
+    </div>
+</EditForm>
+@code{
+    RegisterDto register=new();
+    string message;
+    async Task HandleRegister(){
+        var success=await studentAuthService.RegisterAsync(register);
+        message=success?"Register successfull":"User already exists.";
+        Nav.NavigateTo("/student-login");
+    }
+
+}

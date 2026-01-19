@@ -1,0 +1,11 @@
+C:\Users\304561\Desktop\LMS\LMS.Library\bin\Debug\net10.0\LMS.Library.deps.json
+C:\Users\304561\Desktop\LMS\LMS.Library\bin\Debug\net10.0\LMS.Library.dll
+C:\Users\304561\Desktop\LMS\LMS.Library\bin\Debug\net10.0\LMS.Library.pdb
+C:\Users\304561\Desktop\LMS\LMS.Library\obj\Debug\net10.0\LMS.Library.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\304561\Desktop\LMS\LMS.Library\obj\Debug\net10.0\LMS.Library.AssemblyInfoInputs.cache
+C:\Users\304561\Desktop\LMS\LMS.Library\obj\Debug\net10.0\LMS.Library.AssemblyInfo.cs
+C:\Users\304561\Desktop\LMS\LMS.Library\obj\Debug\net10.0\LMS.Library.csproj.CoreCompileInputs.cache
+C:\Users\304561\Desktop\LMS\LMS.Library\obj\Debug\net10.0\LMS.Library.dll
+C:\Users\304561\Desktop\LMS\LMS.Library\obj\Debug\net10.0\refint\LMS.Library.dll
+C:\Users\304561\Desktop\LMS\LMS.Library\obj\Debug\net10.0\LMS.Library.pdb
+C:\Users\304561\Desktop\LMS\LMS.Library\obj\Debug\net10.0\ref\LMS.Library.dll

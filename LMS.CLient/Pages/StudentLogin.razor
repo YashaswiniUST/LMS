@@ -1,0 +1,53 @@
+@page "/student-login"
+@using LMS.CLient.Services
+@using LMS.Library.DTOs
+@inject StudentAuthService studentAuthService
+@inject NavigationManager Nav
+
+<EditForm Model="@login" OnValidSubmit="HandleLogin">
+    <DataAnnotationsValidator />
+
+    <div class="login-card1">
+        <h4 class="text-center mb-3">Login</h4>
+
+        <div class="mb-3">
+            <label>Email</label>
+            <InputText class="form-control" @bind-Value="login.Email" />
+        </div>
+
+        <div class="mb-3">
+            <label>Password</label>
+            <InputText type="password" class="form-control" @bind-Value="login.Password" />
+        </div>
+
+        <button class="btn btn-primary w-100" type="submit">Login</button>
+
+        <button type="button"
+                class="btn btn-link p-0 mt-2"
+                @onclick="HandleRegister">
+            New User? Register Here..
+        </button>
+
+        <p class="text-danger mt-2">@message</p>
+    </div>
+</EditForm>
+
+@code {
+    LoginDto login = new();
+    string message;
+
+    async Task HandleLogin()
+    {
+        var success = await studentAuthService.LoginAsync(login);
+
+        if (success)
+            Nav.NavigateTo("/books");
+        else
+            message = "Invalid email or password";
+    }
+
+    void HandleRegister()
+    {
+        Nav.NavigateTo("/student-register");
+    }
+}

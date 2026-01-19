@@ -1,0 +1,54 @@
+@page "/issue-history"
+@using LMS.CLient.Services
+@using LMS.Library.DTOs
+@using LMS.Library.Enums
+@inject AdminClientService adminService
+
+<h3>Issue History</h3>
+
+@if (history == null || history.Count == 0)
+{
+    <p>No issue history available.</p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Book</th>
+                <th>Author</th>
+                <th>Status</th>
+               
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in history)
+            {
+                <tr>
+                    <td>@item.BookName</td>
+                    <td>@item.Author</td>
+                    <td>
+                        @if (item.Status == Status.Issued)
+                        {
+                            <span class="badge bg-success">Issued</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-danger">Rejected</span>
+                        }
+                    </td>
+                   
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<IssueHistoryDto> history = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        history = await adminService.GetIssueHistoryAsync();
+    }
+}
