@@ -1,0 +1,56 @@
+@page "/student-issue-history"
+@using LMS.CLient.Services
+@using LMS.Library.DTOs
+@using LMS.Library.Enums
+@inject StudentService studentService
+@inject IJSRuntime JS
+<h3>Issue History</h3>
+
+@if (history == null || history.Count == 0)
+{
+    <p>No issue history available.</p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Book</th>
+                <th>Author</th>
+                <th>Status</th>
+               
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in history)
+            {
+                <tr>
+                    <td>@item.BookName</td>
+                    <td>@item.Author</td>
+                    <td>
+                       
+                        <button class="btn btn-danger" @onclick="()=>HandleReturn(item.IssueId)">Return</button>
+                      
+                    </td>
+                   
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<IssueHistoryDto> history = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        history = await studentService.GetIssueHistoriesAsync();
+    }
+    private async Task HandleReturn(int id){
+       var response= await studentService.ReturnBook(id);
+       if(response)
+       {
+          await JS.InvokeVoidAsync("alert","Book returned successfullyy!!");
+       }
+    }
+}

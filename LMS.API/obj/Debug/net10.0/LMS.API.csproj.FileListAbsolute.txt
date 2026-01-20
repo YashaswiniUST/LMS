@@ -161,3 +161,4 @@ C:\Users\304561\Desktop\LMS\LMS.API\obj\Debug\net10.0\refint\LMS.API.dll
 C:\Users\304561\Desktop\LMS\LMS.API\obj\Debug\net10.0\LMS.API.pdb
 C:\Users\304561\Desktop\LMS\LMS.API\obj\Debug\net10.0\LMS.API.genruntimeconfig.cache
 C:\Users\304561\Desktop\LMS\LMS.API\obj\Debug\net10.0\ref\LMS.API.dll
+C:\Users\304561\Desktop\LMS\LMS.API\obj\Debug\net10.0\LMS.API.sourcelink.json

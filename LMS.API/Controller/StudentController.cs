@@ -26,8 +26,23 @@ namespace LMS.API.Controller
             _studentService.RequestBook(dto);
             return Ok("Request submitted successfullyy..!");
         }
-       
-       
+        [HttpGet("issued-book")]
+       public async Task<IActionResult> IssueHistory()
+       {
+        var history = await _studentService.GetIssueHistory();
+        return Ok(history);
+        }
+        [HttpPut("return-book/{id}")]
+public async Task<IActionResult> ReturnBooks(int id)
+{
+    var result = await _studentService.ReturnBook(id);
+
+    if (!result)
+        return NotFound("Issue record or book not found");
+
+    return Ok("Book returned successfully");
+}
+
         
     }
 }

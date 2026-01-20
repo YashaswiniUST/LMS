@@ -3,9 +3,9 @@
 @using LMS.Library.DTOs
 @inject IJSRuntime JS
 @inject StudentService studentService
-
+@inject NavigationManager nav
 <h3 class="mb-4">Books</h3>
-
+<button class="btn btn-primary" @onclick="HandleHistory">Issued Books</button>
 @if (books == null)
 {
     <p>Loading books...</p>
@@ -72,5 +72,8 @@ else
 
         await studentService.RequestBookAsync(request);
         await JS.InvokeVoidAsync("alert", "Book requested successfully");
+    }
+    private void HandleHistory(){
+        nav.NavigateTo("/student-issue-history");
     }
 }

@@ -5,7 +5,7 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
   "mainAssemblyName": "LMS.CLient",
   "applicationEnvironment": "Development",
   "resources": {
-    "hash": "sha256-5yTT6zmWh6I4t0JNf3q/sWPH3B9mwPOityQrXKXUKBI=",
+    "hash": "sha256-KqUAqdaez41RTtPcLYUmZhANjpz/V2xY/CsJgkN7qVk=",
     "jsModuleNative": [
       {
         "name": "dotnet.native.cs8mcre4gh.js"
@@ -1039,25 +1039,25 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
       },
       {
         "virtualPath": "LMS.Library.wasm",
-        "name": "LMS.Library.ix3db1isia.wasm",
-        "integrity": "sha256-JgRm/VB7dkx8dyCwbUEus49xjF6hMbZeyJhkSrkB2LE="
+        "name": "LMS.Library.9g7i44dxyi.wasm",
+        "integrity": "sha256-x+XtY8TqfZr6awFDuxFI5ev94Df3kRT8eOHErsUkX/g="
       },
       {
         "virtualPath": "LMS.CLient.wasm",
-        "name": "LMS.CLient.sk4kgqhrsf.wasm",
-        "integrity": "sha256-LNyVVmbKwE5BUg9DsGn8gHDj9U1/RmmvUX+eCMjK17c="
+        "name": "LMS.CLient.pjaba6ikof.wasm",
+        "integrity": "sha256-JUzo3gMfCB8PbFbibjVGl83HUzk4szxaMxy50ifnEkk="
       }
     ],
     "pdb": [
       {
         "virtualPath": "LMS.Library.pdb",
-        "name": "LMS.Library.8c33gipcuz.pdb",
-        "integrity": "sha256-WKTWYiUq2ZmrYf4ZH5/XSwkKDxxPGPLI+oyZ/bo0dEc="
+        "name": "LMS.Library.qmm3kxwbw2.pdb",
+        "integrity": "sha256-Ug0pvxO2T+lclQAjwP/XuiXwEhwSD/EslXJhLfISyBE="
       },
       {
         "virtualPath": "LMS.CLient.pdb",
-        "name": "LMS.CLient.9xo8x6hsu4.pdb",
-        "integrity": "sha256-LdlA1N9tdzJWsUjrhmEK1uLM9v/ejuXgMm05DvFmweY="
+        "name": "LMS.CLient.xhlkgfiynh.pdb",
+        "integrity": "sha256-KwqZQ8PmdNyJffiJOXaNkEFs7e/MLwkj5XwxzK6V4rU="
       }
     ],
     "libraryInitializers": [

@@ -9,3 +9,4 @@ C:\Users\304561\Desktop\LMS\LMS.Library\obj\Debug\net10.0\LMS.Library.dll
 C:\Users\304561\Desktop\LMS\LMS.Library\obj\Debug\net10.0\refint\LMS.Library.dll
 C:\Users\304561\Desktop\LMS\LMS.Library\obj\Debug\net10.0\LMS.Library.pdb
 C:\Users\304561\Desktop\LMS\LMS.Library\obj\Debug\net10.0\ref\LMS.Library.dll
+C:\Users\304561\Desktop\LMS\LMS.Library\obj\Debug\net10.0\LMS.Library.sourcelink.json

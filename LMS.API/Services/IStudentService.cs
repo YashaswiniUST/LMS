@@ -7,6 +7,8 @@ namespace LMS.API.Services
     {
         public List<BookDto> GetAllBooks();
         public Issue RequestBook(RequestBook dto);
-       
+         Task<List<IssueHistoryDto>> GetIssueHistory();
+         public Task<bool> ReturnBook(int id);
     }
+
 }
